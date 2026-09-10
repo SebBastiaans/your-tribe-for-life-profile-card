@@ -10,3 +10,61 @@
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
+
+<style>
+	html{
+	width: 200vw;
+	}
+
+	body{
+	background-color: #d6d6d6;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+
+	&:has(.h-front:hover){
+		background-color: black;
+
+		section{
+		border: white 1px solid;
+		background: linear-gradient(0deg in oklch, black 40%, #F5296B 60%);
+
+		.h-front{
+			background-color: black;
+			color: greenyellow;
+		}
+
+		.pic-front{
+			content: url(/src/lib/assets/boos.png);
+		}
+
+		li{
+			font-family: drawn;
+			border-bottom: dashed yellowgreen;
+		}
+
+		li:nth-of-type(even){
+			color: yellow;
+
+			p:first-of-type{
+			color: lightblue;
+			}
+		}
+
+		li:nth-of-type(odd){
+			color: purple;
+
+			p:first-of-type{
+			color: white;
+			}
+		}
+		}
+
+		h1{
+		font-family: drawn;
+		color: lightblue;
+		}
+	}
+	}
+</style>
