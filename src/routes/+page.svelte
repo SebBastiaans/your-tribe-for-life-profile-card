@@ -46,6 +46,10 @@
 </script>
 
 <main>
+    <div class="lanyard-cord" aria-hidden="true">
+        <span class="cord-strand cord-strand--left"></span>
+        <span class="cord-strand cord-strand--right"></span>
+    </div>
     <section class="front-card">
         <h2 class="h-front">2026 profile card</h2>
         <img class="pic-front" src={mugshot} alt="Mugshot van {person.name}">
@@ -79,7 +83,7 @@
     </section>
 </main>
 
-<h1>Pak en gooi de kaart</h1>
+<h1>Scroll horizontaal of pak en sleep de kaart vast</h1>
 
 <style>
 
@@ -136,11 +140,60 @@ main{
   }
 }
 
+/* cord */
+.lanyard-cord{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  rotate: calc(-1 * var(--swing, 0deg));
+  width: 0;
+  height: 0;
+
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    translate: -50% 0;
+    width: 44px;
+    height: 22px;
+    background: linear-gradient(180deg, #d9d9d9, #9a9a9a);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+  }
+
+  .cord-strand{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 100vh;
+    background: repeating-linear-gradient(45deg, #2b2b2b 0 8px, #4d4d4d 8px 16px);
+    border-radius: 6px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .5);
+    transform-origin: bottom center;
+  }
+
+  .cord-strand--left{
+    transform: translateX(-50%) rotate(-18deg);
+  }
+
+  .cord-strand--right{
+    transform: translateX(-50%) rotate(18deg);
+  }
+}
+
+main:not(:global(.dragging)) .lanyard-cord{
+  transition: rotate .6s cubic-bezier(.34, 1.56, .64, 1);
+}
+/* cord */
+
 h1{
 transform: translateX(-50%);
 left: 50%;
-position: absolute;
-bottom: -6rem;
+position: fixed;
+bottom: 2rem;
 width: max-content;
 font-family: roboto;
 }
