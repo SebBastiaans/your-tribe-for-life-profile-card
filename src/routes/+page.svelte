@@ -13,6 +13,35 @@
             mouse.style.setProperty("--y", move.offsetY + "px");
             mouse.style.setProperty("--x", move.offsetX + "px");
         });
+
+        const main = document.querySelector('main');
+        let dragging = false;
+        let startX = 0;
+
+        function endSwing() {
+            if (!dragging) return;
+            dragging = false;
+            main.classList.remove('dragging');
+            main.style.setProperty('--swing', '0deg');
+        }
+
+        main.addEventListener('pointerdown', (down) => {
+            if (down.pointerType !== 'mouse') return;
+            dragging = true;
+            startX = down.clientX;
+            main.setPointerCapture(down.pointerId);
+            main.classList.add('dragging');
+        });
+
+        main.addEventListener('pointermove', (move) => {
+            if (!dragging) return;
+            const deltaX = move.clientX - startX;
+            const angle = Math.max(-25, Math.min(25, -deltaX * 0.15));
+            main.style.setProperty('--swing', angle + 'deg');
+        });
+
+        main.addEventListener('pointerup', endSwing);
+        main.addEventListener('pointercancel', endSwing);
     });
 </script>
 
@@ -88,8 +117,18 @@ main{
   transform-style: preserve-3d;
   position: fixed;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) rotate(var(--swing, 0deg));
+  transform-origin: top center;
   height: 600px;
+  cursor: grab;
+
+  &:not(:global(.dragging)){
+    transition: transform .6s cubic-bezier(.34, 1.56, .64, 1);
+  }
+
+  &:global(.dragging){
+    cursor: grabbing;
+  }
 
   section{
     grid-area: 1/1;
