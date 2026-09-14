@@ -45,7 +45,6 @@
     });
 </script>
 
-<main>
     <div class="lanyard-cord" aria-hidden="true">
         <span class="cord-strand cord-strand--left"></span>
         <span class="cord-strand cord-strand--right"></span>
@@ -81,9 +80,6 @@
         <h2>YB</h2>
         <img src={schoolfoto} alt="Schoolfoto van {person.name}" width="200">
     </section>
-</main>
-
-<h1>Scroll horizontaal of pak en sleep de kaart vast</h1>
 
 <style>
 
@@ -115,30 +111,11 @@
   }
 }
 
-main{
-  display: grid;
-  perspective: 50rem;
-  transform-style: preserve-3d;
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%) rotate(var(--swing, 0deg));
-  transform-origin: top center;
-  height: 600px;
-  cursor: grab;
-
-  &:not(:global(.dragging)){
-    transition: transform .6s cubic-bezier(.34, 1.56, .64, 1);
-  }
-
-  &:global(.dragging){
-    cursor: grabbing;
-  }
-
-  section{
-    grid-area: 1/1;
-    backface-visibility: hidden;
-  }
+section{
+  grid-area: 1/1;
+  backface-visibility: hidden;
 }
+
 
 /* cord */
 .lanyard-cord{
@@ -184,19 +161,8 @@ main{
   }
 }
 
-main:not(:global(.dragging)) .lanyard-cord{
-  transition: rotate .6s cubic-bezier(.34, 1.56, .64, 1);
-}
-/* cord */
 
-h1{
-transform: translateX(-50%);
-left: 50%;
-position: fixed;
-bottom: 2rem;
-width: max-content;
-font-family: roboto;
-}
+/* cord */
 
 .front-card{
   background-color: white;
