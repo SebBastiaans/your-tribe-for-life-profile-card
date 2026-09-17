@@ -10,7 +10,10 @@
 </svelte:head>
 
 
-<h1>Scroll horizontaal of pak en sleep de kaart vast</h1>
+<h1>
+	<span class="desktop-hint">Scroll horizontaal of pak en sleep de kaart vast</span>
+	<span class="mobile-hint">Scroll verticaal of pak en sleep de kaart vast</span>
+</h1>
 
 <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 <main
@@ -69,6 +72,20 @@ font-size: clamp(0.9rem, 4vw, 1.5rem);
 
   main:not(:global(.dragging)) :global(.lanyard-cord){
     transition: none;
+  }
+}
+
+.mobile-hint{
+  display: none;
+}
+
+@media (max-width: 1023px){
+  .desktop-hint{
+    display: none;
+  }
+
+  .mobile-hint{
+    display: inline;
   }
 }
 </style>

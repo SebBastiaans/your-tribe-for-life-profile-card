@@ -276,4 +276,10 @@ section{
     animation: none;
   }
 }
+
+@media (max-width: 1023px){
+  .front-card, .back-card{
+    animation-timeline: scroll(block);
+  }
+}
 </style>
