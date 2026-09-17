@@ -203,8 +203,6 @@ section{
   .pic-front{
     width: 240px;
     height: 310px;
-    background: url(/assets/mugshot-za.png);
-    background-size: cover;
     object-fit: cover;
     display: block;
   }
