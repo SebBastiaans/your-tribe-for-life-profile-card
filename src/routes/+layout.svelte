@@ -12,6 +12,7 @@
 
 <h1>Scroll horizontaal of pak en sleep de kaart vast</h1>
 
+<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 <main
 	tabindex="0"
 	role="application"
@@ -59,5 +60,15 @@ font-size: clamp(0.9rem, 4vw, 1.5rem);
 :global(:focus-visible){
   outline: 3px solid orangered;
   outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  main{
+    transition: none;
+  }
+
+  main:not(:global(.dragging)) :global(.lanyard-cord){
+    transition: none;
+  }
 }
 </style>

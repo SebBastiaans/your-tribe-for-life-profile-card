@@ -270,4 +270,10 @@ section{
     padding-right: .5rem;
   }
 }
+
+@media (prefers-reduced-motion: reduce){
+  .front-card, .back-card{
+    animation: none;
+  }
+}
 </style>
