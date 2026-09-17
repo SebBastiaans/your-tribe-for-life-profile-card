@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
-    import mugshot from '$lib/assets/mugshot-za.png';
-    import schoolfoto from '$lib/assets/schoolfotoYN.png';
+    import mugshot from '$lib/assets/mugshot-za.webp';
+    import schoolfoto from '$lib/assets/schoolfotoYN.webp';
 
     let { data } = $props();
     const person = data.person;
