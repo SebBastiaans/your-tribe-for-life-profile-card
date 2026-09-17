@@ -45,41 +45,41 @@
     });
 </script>
 
-    <div class="lanyard-cord" aria-hidden="true">
-        <span class="cord-strand cord-strand--left"></span>
-        <span class="cord-strand cord-strand--right"></span>
-    </div>
-    <section class="front-card">
-        <h2 class="h-front">2026 profile card</h2>
-        <img class="pic-front" src={mugshot} alt="Mugshot van {person.name}">
-        <ul>
-            <li>
-                <p class="label">[Name]</p>
-                <p>{person.name}</p>
-            </li>
-            <li>
-                <p class="label">[Born]</p>
-                <p>{person.birthdate}</p>
-            </li>
-            <li>
-                <p class="label">[Length]</p>
-                <p>{person.custom.length}cm</p>
-            </li>
-            <li>
-                <p class="label">[Based in]</p>
-                <p>{person.residency}</p>
-            </li>
-            <li>
-                <p class="label">[Studying]</p>
-                <p>{person.custom.studying}</p>
-            </li>
-        </ul>
-    </section>
+<div class="lanyard-cord" aria-hidden="true">
+    <span class="cord-strand cord-strand--left"></span>
+    <span class="cord-strand cord-strand--right"></span>
+</div>
+<section class="front-card">
+    <h2 class="h-front">2026 profile card</h2>
+    <img class="pic-front" src={mugshot} alt="Mugshot van {person.name}">
+    <ul>
+        <li>
+            <p class="label">[Name]</p>
+            <p>{person.name}</p>
+        </li>
+        <li>
+            <p class="label">[Born]</p>
+            <p>{person.birthdate}</p>
+        </li>
+        <li>
+            <p class="label">[Length]</p>
+            <p>{person.custom.length}cm</p>
+        </li>
+        <li>
+            <p class="label">[Based in]</p>
+            <p>{person.residency}</p>
+        </li>
+        <li>
+            <p class="label">[Studying]</p>
+            <p>{person.custom.studying}</p>
+        </li>
+    </ul>
+</section>
 
-    <section class="back-card">
-        <h2>YB</h2>
-        <img src={schoolfoto} alt="Schoolfoto van {person.name}" width="200">
-    </section>
+<section class="back-card">
+    <h2>YB</h2>
+    <img src={schoolfoto} alt="Schoolfoto van {person.name}" width="200">
+</section>
 
 <style>
 

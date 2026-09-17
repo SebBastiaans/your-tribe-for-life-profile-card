@@ -5,6 +5,7 @@
 </script>
 
 <svelte:head>
+	<title>Visitekaartje van Seb</title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
