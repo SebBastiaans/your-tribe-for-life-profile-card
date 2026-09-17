@@ -12,7 +12,11 @@
 
 <h1>Scroll horizontaal of pak en sleep de kaart vast</h1>
 
-<main>
+<main
+	tabindex="0"
+	role="application"
+	aria-label="Kaart, gebruik de pijltjestoetsen links/rechts om te laten swingen"
+>
 {@render children()}
 </main>
 
