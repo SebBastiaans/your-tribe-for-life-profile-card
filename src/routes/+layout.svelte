@@ -45,7 +45,9 @@ transform: translateX(-50%);
 left: 50%;
 position: fixed;
 bottom: 2rem;
-width: max-content;
+width: min(90vw, max-content);
+text-align: center;
 font-family: roboto;
+font-size: clamp(0.9rem, 4vw, 1.5rem);
 }
 </style>
