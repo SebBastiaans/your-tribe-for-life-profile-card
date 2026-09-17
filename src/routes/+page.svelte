@@ -92,13 +92,15 @@
 
 @font-face{
   font-family: roboto;
-  src: url(../lib/assets/fonts/RobotoMono-VariableFont_wght.ttf) format("truetype");
+  src: url(../lib/assets/fonts/RobotoMono-VariableFont_wght.woff2) format("woff2"),
+       url(../lib/assets/fonts/RobotoMono-VariableFont_wght.ttf) format("truetype");
   font-weight: 100 700;
   font-display: swap;
 }
 @font-face{
   font-family: drawn;
-  src: url(../lib/assets/fonts/DJGROSS.ttf) format("truetype");
+  src: url(../lib/assets/fonts/DJGROSS.woff2) format("woff2"),
+       url(../lib/assets/fonts/DJGROSS.ttf) format("truetype");
   font-display: swap;
 }
 
@@ -115,7 +117,6 @@ section{
   grid-area: 1/1;
   backface-visibility: hidden;
 }
-
 
 /* cord */
 .lanyard-cord{
