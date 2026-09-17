@@ -10,11 +10,11 @@
 </svelte:head>
 
 
+<h1>Scroll horizontaal of pak en sleep de kaart vast</h1>
+
 <main>
 {@render children()}
 </main>
-
-<h1>Scroll horizontaal of pak en sleep de kaart vast</h1>
 
 <style>
 main{
