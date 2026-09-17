@@ -51,4 +51,9 @@ text-align: center;
 font-family: roboto;
 font-size: clamp(0.9rem, 4vw, 1.5rem);
 }
+
+:global(:focus-visible){
+  outline: 3px solid orangered;
+  outline-offset: 2px;
+}
 </style>
